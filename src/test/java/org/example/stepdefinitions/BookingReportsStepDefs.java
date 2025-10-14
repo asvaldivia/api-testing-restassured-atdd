@@ -1,7 +1,5 @@
 package org.example.stepdefinitions;
-
 import io.cucumber.java.After;
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,10 +9,8 @@ import org.example.payloads.*;
 import org.example.requests.AuthApi;
 import org.example.requests.BookingApi;
 import org.example.requests.ReportApi;
-
 import java.time.LocalDate;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 

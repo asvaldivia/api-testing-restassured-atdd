@@ -27,4 +27,12 @@ public class BookingApi {
                 .delete(apiUrl + Integer.toString(bookingId));
     }
 
+    public static Response getBookings(String authToken) {
+        return given()
+                .header("cookie", "token=" + authToken)
+                .contentType(ContentType.JSON)
+                .when()
+                .get(apiUrl);
+    }
+
 }
