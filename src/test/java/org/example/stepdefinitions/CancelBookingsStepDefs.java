@@ -1,9 +1,5 @@
 package org.example.stepdefinitions;
 
-import infrastructure.process.PortWaiter;
-import infrastructure.process.ProcessManager;
-import infrastructure.wiremock.WireMockManager;
-import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,13 +9,9 @@ import org.example.payloads.*;
 import org.example.requests.AuthApi;
 import org.example.requests.BookingApi;
 import io.cucumber.java.Before;
-import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
 
 public class CancelBookingsStepDefs {
 
@@ -58,21 +50,10 @@ public class CancelBookingsStepDefs {
     Response deleteResponse;
     @When("Booking is cancelled auth mock")
     public void booking_is_cancelled() {
-        String authToken = "";
-        if(!TestConfig.isMockingEnabled()) {
-            Auth auth = new Auth(
-                    "admin",
-                    "password"
-            );
-            Response authResponse = AuthApi.postAuth(auth);
-            authToken = authResponse.getCookie("token");
-            deleteResponse = BookingApi.deleteBooking(bookingResponse.getBookingid(), authToken);
-
-        } else {
-            deleteResponse = BookingApi.deleteBooking(bookingResponse.getBookingid(), "asd123");
-        }
-
-
+        // Calling a method that checks if infra is set for mocking or not in order to return a fixed token or
+        // a real one hitting the real auth API.
+        String authToken = AuthApi.getAuthToken();
+        deleteResponse = BookingApi.deleteBooking(bookingResponse.getBookingid(), authToken);
     }
 
     @Then("Booking is cancelled successfully auth mock")

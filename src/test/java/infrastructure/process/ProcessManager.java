@@ -37,6 +37,6 @@ public class ProcessManager {
      *  - wait until port is released
      */
     public void hardResetPort(int port) {
-        ensurePortIsFree(port, Duration.ofSeconds(30));
+        ensurePortIsFree(port, Duration.ofSeconds(180));
     }
 }
