@@ -121,6 +121,7 @@ public class BookingsStepDefs {
     Response deleteResponse;
     @When("Booking is cancelled")
     public void booking_is_cancelled() {
+        // see CancelBookingsAuthMocked.feature to improve and avoid use logic here.
         if (!TestConfig.isMockingEnabled()) {
             Auth auth = new Auth(
                     "admin",
