@@ -1,3 +1,4 @@
+@bookings
 Feature: Bookings
 
   Scenario: User can book a room

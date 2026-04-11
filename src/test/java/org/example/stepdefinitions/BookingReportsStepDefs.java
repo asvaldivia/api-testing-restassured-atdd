@@ -95,7 +95,7 @@ public class BookingReportsStepDefs {
 
     // Teardown is needed, specifically for delete bookings to make
     // this idempotent
-    @After
+    @After("@booking-reports")
     public void delete_bookings_teardown() {
         Auth auth = new Auth(
                 "admin",

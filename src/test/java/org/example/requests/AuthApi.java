@@ -8,7 +8,7 @@ import org.example.payloads.Booking;
 import static io.restassured.RestAssured.given;
 
 public class AuthApi {
-    private static final String apiUrl = "http://localhost:8080/auth/login";
+    private static final String apiUrl = "http://127.0.0.1:8080/auth/login";
 
     public static Response postAuth(Auth payload) {
         return given()

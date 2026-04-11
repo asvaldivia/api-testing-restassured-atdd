@@ -11,8 +11,19 @@ public class BookingDates {
     @JsonProperty
     private LocalDate checkout;
 
+    public BookingDates() {
+    }
+
     public BookingDates(LocalDate checkin, LocalDate checkout){
         this.checkin = checkin;
         this.checkout = checkout;
+    }
+
+    public LocalDate getCheckin() {
+        return this.checkin;
+    }
+
+    public LocalDate getCheckout() {
+        return this.checkout;
     }
 }

@@ -1,3 +1,4 @@
+@booking-reports
 Feature: Booking reports
 
  Scenario: User requests total bookings of all rooms

@@ -5,6 +5,9 @@ import io.restassured.http.Cookie;
 import io.restassured.response.Response;
 import org.example.payloads.Booking;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
 public class BookingApi {
@@ -26,7 +29,6 @@ public class BookingApi {
                 .when()
                 .delete(apiUrl + Integer.toString(bookingId));
     }
-
     public static Response getBookings(String authToken) {
         return given()
                 .header("cookie", "token=" + authToken)

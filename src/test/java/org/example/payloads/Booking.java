@@ -32,4 +32,11 @@ public class Booking {
         this.additionalneeds = additionalneeds;
     }
 
+    public BookingDates getDates() {
+        return this.bookingdates;
+    }
+
+    public int getRoomid() {
+        return this.roomid;
+    }
 }
