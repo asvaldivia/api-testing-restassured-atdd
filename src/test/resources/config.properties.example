@@ -1,0 +1,6 @@
+# With that enabled the tests will execute infrastructure level hooks (setups) that can impact
+# reliability on envs that are productive, only set true when you will run on test envs or ephemeral envs
+# once executed you need to start up your application again! For the booking platform you will need to run
+# the sh again. Set this true value on src/test/resources/config.properties if you obviously want to run
+# tests with mocked apis.
+mock.enabled=true
