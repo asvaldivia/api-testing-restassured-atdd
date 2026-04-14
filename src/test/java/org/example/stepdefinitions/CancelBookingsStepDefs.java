@@ -4,7 +4,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import org.example.config.TestConfig;
 import org.example.payloads.*;
 import org.example.requests.AuthApi;
 import org.example.requests.BookingApi;
